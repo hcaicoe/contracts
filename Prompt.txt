@@ -1,0 +1,555 @@
+Now please comprehend all the uploaded policy documents and understand all the policies. Here are the policies provided in json format:
+[
+  {
+    "policy_id": "CIP-AUP-003",
+    "policy_name": "Acceptable Use & Asset Governance Policy",
+    "version": "2.2",
+    "effective_date": "2025-02-01",
+    "risk_category": "IT Operations",
+    "applicable_regulations": [
+      "SOC 2",
+      "ISO 27001"
+    ],
+    "owner": "Chief Technology & Security Officer (CTSO)",
+    "sections": [
+      {
+        "title": "Scope & Definitions",
+        "risk_score": 1,
+        "content": "Applies to all employees, contractors, and third parties using Capstone digital assets. Defines Shadow IT and Privileged Access."
+      },
+      {
+        "title": "Asset Ownership",
+        "risk_score": 3,
+        "content": "Capstone retains ownership of all corporate devices, software, and data. Includes monitoring of device activity and remote wipe capabilities.",
+        "non_compliance_impact": "Tampering with monitoring agents is a Medium Risk violation."
+      },
+      {
+        "title": "Acceptable Use Guidelines",
+        "risk_score": 3,
+        "content": "Permitted: Job-related tasks, limited personal browsing. Prohibited: Shadow IT, Cryptomining, Data Exfiltration to personal cloud.",
+        "non_compliance_impact": "Use of Shadow IT is a Medium to High Risk. Exfiltrating data to personal cloud is a High Risk (Score 4) violation."
+      },
+      {
+        "title": "Network Security",
+        "risk_score": 4,
+        "content": "Public Wi-Fi allowed ONLY via VPN. Untrusted USB hubs prohibited. VPN mandatory for internal dashboards/Git.",
+        "non_compliance_impact": "Accessing sensitive systems over public Wi-Fi without VPN is a High Risk security violation."
+      },
+      {
+        "title": "BYOD & Physical Security",
+        "risk_score": 3,
+        "content": "Devices must never be left unattended. Theft/loss reported within 1 hour. BYOD requires MDM enrollment.",
+        "non_compliance_impact": "Failure to report a lost device within 1 hour is a Medium Risk violation affecting incident response timelines."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-ISP-001",
+    "policy_name": "Information Security & Data Protection Policy",
+    "version": "3.5",
+    "effective_date": "2025-11-01",
+    "risk_category": "Security",
+    "applicable_regulations": [
+      "ISO 27001",
+      "SOC 2",
+      "HIPAA"
+    ],
+    "owner": "Chief Information Security Officer (CISO)",
+    "sections": [
+      {
+        "title": "Purpose & Scope",
+        "risk_score": 1,
+        "content": "Establishes mandatory controls to protect data against unauthorized access, misuse, or loss. Applies to all accessing Capstone systems."
+      },
+      {
+        "title": "Data Classification",
+        "risk_score": 4,
+        "content": "4-tier system: Public, Internal, Confidential, Restricted (PII, Client Data). Users must label data accordingly.",
+        "non_compliance_impact": "Misclassifying 'Restricted' data as 'Public' is a High Risk violation leading to potential data leakage."
+      },
+      {
+        "title": "Access Control",
+        "risk_score": 5,
+        "content": "Least Privilege basis. MFA mandatory for privileged access. Terminated user access revoked within 4 hours.",
+        "non_compliance_impact": "Sharing credentials or bypassing MFA is a Critical Risk (Score 5) resulting in access revocation/termination."
+      },
+      {
+        "title": "Encryption Standards",
+        "risk_score": 5,
+        "content": "At Rest: AES-256 (DBs, backups, laptops). In Transit: TLS 1.2+ (web traffic, API).",
+        "non_compliance_impact": "Storage of unencrypted sensitive data is strictly prohibited. Violations constitute a Critical Security Incident."
+      },
+      {
+        "title": "Endpoint & Network Security",
+        "risk_score": 4,
+        "content": "EDR Agent mandatory. Zero-Trust network segmentation. Critical patches applied within 72 hours.",
+        "non_compliance_impact": "Connecting a non-compliant device to the corporate network is a High Risk violation."
+      },
+      {
+        "title": "Incident Response",
+        "risk_score": 5,
+        "content": "Report incidents to security@capstone.inc within 30 minutes. Downtime costs ~$8,000/hour.",
+        "non_compliance_impact": "Failure to report a known security incident is a Critical Risk and grounds for immediate termination."
+      },
+      {
+        "title": "Third-Party Management",
+        "risk_score": 4,
+        "content": "Vendors must sign DPA. Critical vendors undergo annual security audits (ISO 27001/SOC 2).",
+        "non_compliance_impact": "Onboarding a vendor without a DPA is a High Risk procurement violation."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-RWP-010",
+    "policy_name": "Remote Work & Asset Usage Policy",
+    "version": "1.1",
+    "effective_date": "2025-01-01",
+    "risk_category": "HR & Operations",
+    "applicable_regulations": [
+      "SOC 2",
+      "ISO 27001",
+      "Local Labor Laws"
+    ],
+    "owner": "Office of the Chief Compliance Officer (OCCO)",
+    "sections": [
+      {
+        "title": "Purpose & Eligibility",
+        "risk_score": 3,
+        "content": "Remote work requires manager approval. Handling regulated data (PCI, HIPAA) requires InfoSec approval.",
+        "non_compliance_impact": "Working remotely without approval is a Medium Risk violation."
+      },
+      {
+        "title": "Security Requirements",
+        "risk_score": 5,
+        "content": "Use ONLY company-issued laptops with full-disk encryption. Public Wi-Fi via VPN only. Screens locked when away.",
+        "non_compliance_impact": "Processing data on personal devices or unencrypted networks is a Critical Risk (Score 5)."
+      },
+      {
+        "title": "Asset Usage Guidelines",
+        "risk_score": 4,
+        "content": "Prohibited: Personal Cloud upload, printing confidential docs at home, sharing devices.",
+        "non_compliance_impact": "Exfiltrating data to personal cloud storage is a High Risk violation treated as data theft."
+      },
+      {
+        "title": "Physical Workspace & Privacy",
+        "risk_score": 2,
+        "content": "Maintain private workspace. Screens not visible to others. Ergonomic standards met.",
+        "non_compliance_impact": "Repeated exposure of screens in public spaces is a Low to Medium Risk privacy violation."
+      },
+      {
+        "title": "Financial Provisions",
+        "risk_score": 2,
+        "content": "Reimbursements: Internet ($25/mo), Ergonomics ($150/yr). Employees liable for negligent damage.",
+        "non_compliance_impact": "Falsifying reimbursement claims is a High Risk fraud violation."
+      },
+      {
+        "title": "Incident Reporting",
+        "risk_score": 5,
+        "content": "Immediate reporting (within 1 hour) for lost devices, malware, or accidental disclosure.",
+        "non_compliance_impact": "Failure to report a lost device immediately is a Critical Risk hindering breach containment."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-ECC-002",
+    "policy_name": "Employee Conduct, Ethics & Anti-Fraud Policy",
+    "version": "5.2",
+    "effective_date": "2025-11-10",
+    "risk_category": "HR & Ethics",
+    "applicable_regulations": [
+      "FCPA",
+      "UK Bribery Act",
+      "OECD Principles"
+    ],
+    "owner": "Human Resources & Compliance",
+    "sections": [
+      {
+        "title": "Ethical Conduct Standards",
+        "risk_score": 4,
+        "content": "Act with honesty/integrity. Prohibited: Discrimination, harassment, falsifying docs, asset misuse.",
+        "non_compliance_impact": "Fraudulent behavior is a High Risk violation resulting in immediate termination/legal action."
+      },
+      {
+        "title": "Gift & Hospitality",
+        "risk_score": 3,
+        "content": "Prohibited: Gifts >$100, cash/gift cards. Permitted: Promo items <$30, Meals <$60.",
+        "non_compliance_impact": "Violating gift limits creates a Conflict of Interest risk (Score 3)."
+      },
+      {
+        "title": "Conflict of Interest",
+        "risk_score": 4,
+        "content": "Must disclose: Family in supplier/competitor roles, personal biz overlap, romantic relationships.",
+        "non_compliance_impact": "Failure to disclose a conflict of interest is a High Risk violation."
+      },
+      {
+        "title": "Anti-Fraud Controls",
+        "risk_score": 5,
+        "content": "Segregation of Duties. Dual-auth for >$25k. Suspicious activity reported within 24 hours.",
+        "non_compliance_impact": "Bypassing financial controls is a Critical Risk (Score 5) treated as embezzlement."
+      },
+      {
+        "title": "Harassment & Workplace Safety",
+        "risk_score": 5,
+        "content": "Zero-Tolerance for harassment/discrimination. Anonymous reporting via Ethics Hotline.",
+        "non_compliance_impact": "Harassment findings result in Immediate Termination (Critical Risk)."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-RCA-005",
+    "policy_name": "Regulatory Compliance & Audit Control Standard",
+    "version": "1.1",
+    "effective_date": "2025-12-05",
+    "risk_category": "Legal & Governance",
+    "applicable_regulations": [
+      "SOX",
+      "GDPR",
+      "PCI-DSS",
+      "ISO 27001",
+      "COSO",
+      "NIST CSF"
+    ],
+    "owner": "Corporate Compliance & Governance",
+    "sections": [
+      {
+        "title": "Purpose & Scope",
+        "risk_score": 1,
+        "content": "Uniform framework for adherence to obligations. Applies to all units. Uses COSO/NIST CSF."
+      },
+      {
+        "title": "Regulatory Requirements",
+        "risk_score": 5,
+        "content": "Mandates: GDPR, DPDPA, CCPA, SOX, PCI-DSS, HIPAA, ISO 27001.",
+        "non_compliance_impact": "Failure to maintain inventory or ignoring mandates is a Critical Risk violation."
+      },
+      {
+        "title": "Risk Management & Controls",
+        "risk_score": 4,
+        "content": "Risks documented in Enterprise Risk Register. Updated Quarterly. Control Owners validate effectiveness.",
+        "non_compliance_impact": "Failure to identify/mitigate high-risk areas is a High Risk governance failure."
+      },
+      {
+        "title": "Audit Procedures",
+        "risk_score": 4,
+        "content": "Adherence to Audit Calendar. Findings validated with evidence. Formal remediation plans required.",
+        "non_compliance_impact": "Obstructing audit or falsifying evidence is a High Risk violation (Termination/Legal)."
+      },
+      {
+        "title": "Reporting & Escalation",
+        "risk_score": 5,
+        "content": "Breaches reported within 24 hours. High-severity escalation. Monthly dashboards.",
+        "non_compliance_impact": "Late reporting (>24 hrs) triggers statutory fines and is a Critical Risk."
+      },
+      {
+        "title": "Third-Party Compliance",
+        "risk_score": 4,
+        "content": "Vendors assessed before onboarding. Must sign compliance clauses. Non-compliant vendors suspended.",
+        "non_compliance_impact": "Engaging vendor without assessment is a High Risk TPRM violation."
+      },
+      {
+        "title": "Documentation & Evidence",
+        "risk_score": 3,
+        "content": "Centralized repository. Retention per legal mandates. Audit trails preserved.",
+        "non_compliance_impact": "Loss of evidence due to poor archiving is a Medium Risk violation."
+      },
+      {
+        "title": "Non-Compliance & Penalties",
+        "risk_score": 3,
+        "content": "Actions: Disciplinary, Financial penalties, Suspension of operations.",
+        "non_compliance_impact": "Repeated negligence is a High Risk performance issue."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-GPS-001",
+    "policy_name": "Global Data Privacy and Regulatory Compliance Statement",
+    "version": "2.1",
+    "effective_date": "2026-01-01",
+    "risk_category": "Legal & Compliance",
+    "applicable_regulations": [
+      "GDPR",
+      "CCPA/CPRA",
+      "HIPAA",
+      "DPDPA 2023",
+      "UK DPA 2018"
+    ],
+    "owner": "Data Protection Office (DPO)",
+    "sections": [
+      {
+        "title": "Introduction",
+        "risk_score": 1,
+        "content": "Outlines controls for personal data processing, storage, transfer, and disposal."
+      },
+      {
+        "title": "Regulatory Framework",
+        "risk_score": 5,
+        "content": "Aligned with GDPR, UK-GDPR, CCPA/CPRA, HIPAA, DPDPA 2023, LGPD, PIPEDA.",
+        "non_compliance_impact": "Violation may result in fines up to 4% turnover and contract termination."
+      },
+      {
+        "title": "Data Subject Rights",
+        "risk_score": 4,
+        "content": "Supports Rights to Access, Rectification, Erasure, Restriction, Portability. 30-day SLA.",
+        "non_compliance_impact": "Failure to honor Subject Rights within SLA is a High Risk violation."
+      },
+      {
+        "title": "Cross-Border Data Transfer",
+        "risk_score": 5,
+        "content": "Requires SCCs, IDTA, or TIA for high-risk jurisdictions.",
+        "non_compliance_impact": "Unauthorized transfers are a Critical Risk. Transfers without legal basis are prohibited."
+      },
+      {
+        "title": "Data Security & Governance",
+        "risk_score": 5,
+        "content": "AES-256 (Rest), TLS 1.2+ (Transit). MFA for privileged accounts. SIEM monitoring.",
+        "non_compliance_impact": "Storing cleartext personal data or unencrypted sharing is a Critical Risk."
+      },
+      {
+        "title": "Retention & Deletion",
+        "risk_score": 3,
+        "content": "Client Data: 7 yrs. HR Data: 10 yrs. Logs: 7 yrs.",
+        "non_compliance_impact": "Keeping data too long or deleting prematurely is a Medium Risk violation."
+      },
+      {
+        "title": "Breach Management",
+        "risk_score": 5,
+        "content": "Timelines: 72 Hours (GDPR), 30 Days (US State), 48 Hours (Industry).",
+        "non_compliance_impact": "Failure to report breach within 72 hours is a Critical Risk."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-ICF-006",
+    "policy_name": "Industry-Specific Regulatory Compliance Framework",
+    "version": "2.1",
+    "effective_date": "2025-12-05",
+    "risk_category": "Legal & Compliance",
+    "applicable_regulations": [
+      "FFIEC",
+      "PCI-DSS",
+      "HIPAA",
+      "NERC-CIP",
+      "SOX",
+      "GDPR"
+    ],
+    "owner": "Regulatory Affairs & Legal Risk Management",
+    "sections": [
+      {
+        "title": "Purpose & Scope",
+        "risk_score": 1,
+        "content": "Governance for Financial, Healthcare, Critical Infrastructure sectors."
+      },
+      {
+        "title": "Regulatory Landscape",
+        "risk_score": 4,
+        "content": "Obligations: FFIEC, PCI-DSS (Finance); HIPAA, EU MDR (Healthcare); NERC-CIP (Infrastructure).",
+        "non_compliance_impact": "Failure to apply correct framework is a High Risk violation."
+      },
+      {
+        "title": "Mandatory Compliance Controls",
+        "risk_score": 5,
+        "content": "Segregation of Duties. Control Testing (Quarterly/Semi-annual). Evidence Retention.",
+        "non_compliance_impact": "Missing control tests or failing SoD is a Critical Risk."
+      },
+      {
+        "title": "Technical Controls",
+        "risk_score": 5,
+        "content": "AES-256/TLS 1.2+. MFA mandatory. SIEM monitoring.",
+        "non_compliance_impact": "Deploying regulated system without MFA/Encryption is a Critical Risk."
+      },
+      {
+        "title": "Financial Compliance",
+        "risk_score": 5,
+        "content": "AML/KYC screening. Accurate reporting (SAR). Risk engine integrity verification.",
+        "non_compliance_impact": "Failure to report suspicious activity is a Critical Risk (Criminal Liability)."
+      },
+      {
+        "title": "Third-Party Oversight",
+        "risk_score": 4,
+        "content": "Due Diligence required. Periodic audits. Termination for non-compliance.",
+        "non_compliance_impact": "Engaging non-compliant vendor is a High Risk supply chain violation."
+      },
+      {
+        "title": "Breach Handling",
+        "risk_score": 5,
+        "content": "Root Cause Analysis (72 hrs). Regulator notification. System isolation.",
+        "non_compliance_impact": "Late reporting (>72 hrs) is a Critical Risk."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-LGL-008",
+    "policy_name": "Legal Risk Management & Contracting Policy",
+    "version": "1.0",
+    "effective_date": "2025-12-06",
+    "risk_category": "Legal & Governance",
+    "applicable_regulations": [
+      "Contract Law",
+      "Commercial Code",
+      "Corporate Governance"
+    ],
+    "owner": "Office of the General Counsel",
+    "sections": [
+      {
+        "title": "Liability Framework",
+        "risk_score": 5,
+        "content": "Supplier contracts must stipulate Unlimited Liability for direct damages, data breaches, and gross negligence. Caps only permitted for indirect damages.",
+        "non_compliance_impact": "Signing a contract with capped liability for data breaches is a Critical Risk."
+      },
+      {
+        "title": "Indemnification",
+        "risk_score": 5,
+        "content": "Uncapped Indemnification required for IP Infringement, Data Privacy Breaches, and Supplier negligence.",
+        "non_compliance_impact": "Accepting capped indemnities for IP or Data Privacy is a Critical Risk (Score 5)."
+      },
+      {
+        "title": "Warranty Period",
+        "risk_score": 3,
+        "content": "Services/Deliverables must carry a 24-month warranty from acceptance. Defects remedied at Supplier expense.",
+        "non_compliance_impact": "Reducing warranty periods below 24 months is a Medium Risk financial exposure."
+      },
+      {
+        "title": "Work at Risk",
+        "risk_score": 4,
+        "content": "Maximum 25% of total contract value permitted as Work at Risk. Requires CFO/GC approval.",
+        "non_compliance_impact": "Exceeding the 25% Work at Risk threshold without a contract is a High Risk violation."
+      },
+      {
+        "title": "Parental Guarantees",
+        "risk_score": 4,
+        "content": "Required for contracts >$10M or involving critical infrastructure. Must come from ultimate parent entity.",
+        "non_compliance_impact": "Failure to secure a Parental Guarantee for critical outsourcing is a High Risk."
+      }
+    ]
+  },
+  {
+    "policy_id": "CIP-COM-009",
+    "policy_name": "Commercial Terms & Invoicing Policy",
+    "version": "1.0",
+    "effective_date": "2025-12-06",
+    "risk_category": "Finance & Procurement",
+    "applicable_regulations": [
+      "Global Tax Laws",
+      "Procurement Standards"
+    ],
+    "owner": "Chief Financial Officer (CFO)",
+    "sections": [
+      {
+        "title": "Payment Terms",
+        "risk_score": 5,
+        "content": "Standard Term: Net 180 Days from receipt of valid invoice. Deviations require CFO approval.",
+        "non_compliance_impact": "Agreeing to shorter payment terms is a Critical Risk financial deviation."
+      },
+      {
+        "title": "Invoicing Schedule",
+        "risk_score": 3,
+        "content": "Project Milestones: Invoice 15 days after sign-off. BAU: Invoice 15 days after month-end.",
+        "non_compliance_impact": "Early invoicing or pre-billing is a Medium Risk process violation."
+      },
+      {
+        "title": "Invoice Validation & Transparency",
+        "risk_score": 4,
+        "content": "Detailed calculations (timesheets/logs) mandatory. Invoices without support will be rejected.",
+        "non_compliance_impact": "Processing opaque invoices is a High Risk control failure."
+      },
+      {
+        "title": "Disputes & Refunds",
+        "risk_score": 4,
+        "content": "Supplier must refund disputed amounts within 7 days if dispute raised after payment.",
+        "non_compliance_impact": "Failure to secure a refund clause is a High Risk financial exposure."
+      },
+      {
+        "title": "Currency & FX Risk",
+        "risk_score": 3,
+        "content": "Supplier bears currency risk. Contracts denominated in USD/local currency and fixed. No adjustments.",
+        "non_compliance_impact": "Accepting FX risk exposes Capstone to market volatility (Medium Risk)."
+      },
+      {
+        "title": "Rate Validity & COLA",
+        "risk_score": 4,
+        "content": "Rate cards valid for 5 Years. Rates inclusive of COLA/Inflation. No annual increases.",
+        "non_compliance_impact": "Allowing annual rate hikes is a High Risk procurement failure."
+      }
+    ]
+  }
+]
+Refer to sample supplier contract document name "SampleHPARC-software-development-agreement.pdf". Create a very comprehensive master services agreement that is submitted by a supplier to this customer company. The customer company has global operations in north America, UK, Europe and APAC. The supplier company is headquartered in Hyderabad and provides the services from north America, Brazil, India and Hungary. and  The agreement is about outsourcing hardware procurement comprising of 500 Wintel servers, 1000 unix servers, 5000 desktops, 2000 laptops, 2000 network switches, 500 network router, 200 firewalls. These are all hosted in an outsourced data center of 50000 square feets, to be provided by the vendor . The liabilities should be unlimited, indemnities should be uncapped, penalties should be uncapped and customer should seek parental company guarantee. Payment period should be 180 days. The agreement should be written in such a way so that it is compliant with 80% of the policies and has low risk score on 10% of the policies and high risk score on 10% of the policies. The agreement document will have the following sections:
+{
+  "document_structures": {
+    "SOW": {
+      "title": "Statement of Work",
+      "sections": [
+        "1.1 Introduction & Purpose",
+        "1.2 Scope of Work (In-scope/Out-scope)",
+        "1.3 Requirements (Functional/Technical)",
+        "1.4 Timeline & Milestones",
+        "1.5 Roles & Responsibilities",
+        "1.6 Pricing & Payment",
+        "1.7 Assumptions & Dependencies",
+        "1.8 Change Management",
+        "1.9 Acceptance Criteria",
+        "1.10 Terms & Conditions",
+        "1.11 Appendices"
+      ]
+    },
+    "MSA": {
+      "title": "Master Services Agreement",
+      "sections": [
+        "2.1 Definitions",
+        "2.2 Scope & Relationship",
+        "2.3 Term & Termination",
+        "2.4 Service Obligations",
+        "2.5 Pricing & Billing",
+        "2.6 Confidentiality",
+        "2.7 Intellectual Property",
+        "2.8 Data Protection",
+        "2.9 Warranties & Indemnification",
+        "2.10 Compliance & Insurance",
+        "2.11 Dispute Resolution",
+        "2.12 Miscellaneous"
+      ]
+    },
+    "Internal_Policy": {
+      "title": "Internal Policy Document",
+      "sections": [
+        "3.1 Metadata",
+        "3.2 Purpose & Scope",
+        "3.3 Policy Statement",
+        "3.4 Roles & Responsibilities",
+        "3.5 Procedures",
+        "3.6 Exceptions",
+        "3.7 Consequences",
+        "3.8 Related Docs"
+      ]
+    },
+    "Regulatory_Compliance": {
+      "title": "Legal & Regulatory Compliance",
+      "sections": [
+        "4.1 Purpose & Context",
+        "4.2 Definitions",
+        "4.3 Compliance Requirements",
+        "4.4 Operational Controls",
+        "4.5 Data Protection",
+        "4.6 Audit & Enforcement",
+        "4.7 Exceptions"
+      ]
+    },
+    "General_Terms_Conditions": {
+      "title": "General Terms & Conditions",
+      "sections": [
+        "5.1 Preamble & Acceptance",
+        "5.2 Definitions",
+        "5.3 Provision of Services",
+        "5.4 Fees & Invoicing",
+        "5.5 Client Obligations",
+        "5.6 Intellectual Property",
+        "5.7 Confidentiality",
+        "5.8 Warranties & Disclaimers",
+        "5.9 Limitation of Liability",
+        "5.10 Indemnification",
+        "5.11 Termination",
+        "5.12 General Provisions (Force Majeure, Law)"
+      ]
+    }
+  }
+}
